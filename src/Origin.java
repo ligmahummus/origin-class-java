@@ -9,9 +9,12 @@ public class Origin {
 
         // Distance uninitialized.
         double distance;
+
+        // Nearest coordinates uninitialized.
         int nearest_x;
         int nearest_y;
 
+        // Scanner object.
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter first point coordinates:");
@@ -21,14 +24,15 @@ public class Origin {
         // First input is initialized as the nearest coordinates set.
         nearest_y = y1;
         nearest_x = x1;
+
+        // First input's distance initialized.
         distance = Math.sqrt(Math.pow(x1 - X_BASE, 2) + Math.pow(y1 - Y_BASE, 2));
 
         System.out.println ("Enter second point coordinates:");
         int x2 = scan.nextInt();
         int y2 = scan.nextInt();
 
-        // Condition if second input's coordinates are equal or less and update nearest x & y.
-
+        // Using math equation to calculate if second input's distance from base is less than prev distance.
         if(Math.sqrt(Math.pow(x2 - X_BASE, 2) + Math.pow(y2 - Y_BASE, 2)) < distance) {
             nearest_x = x2;
             nearest_y = y2;
@@ -38,7 +42,7 @@ public class Origin {
         int x3 = scan.nextInt();
         int y3 = scan.nextInt();
 
-        // Condition if second input's coordinates are equal or less and update nearest x & y.
+        // Using math equation to calculate if third input's distance from base is less than prev distance.
         if(Math.sqrt(Math.pow(x3 - X_BASE, 2) + Math.pow(y3 - Y_BASE, 2)) < distance) {
             nearest_x = x3;
             nearest_y = y3;
