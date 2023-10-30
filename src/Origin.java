@@ -1,10 +1,9 @@
 import java.util.Scanner;
+
 public class Origin {
     public static void main(String[] args) {
 
         // Constants are flexible if we ever want to check proximity to another coordinates.
-        final int X_BASE = 0;
-        final int Y_BASE = 0;
 
         // Nearest coordinates are not initialized.
         int nearest_x;
@@ -16,7 +15,7 @@ public class Origin {
         int x1 = scan.nextInt();
         int y1 = scan.nextInt();
 
-        // FIrst input is initialized as the nearest coordinates set.
+        // First input is initialized as the nearest coordinates set.
         nearest_y = y1;
         nearest_x = x1;
 
@@ -25,9 +24,9 @@ public class Origin {
         int y2 = scan.nextInt();
 
         // Condition if second input's coordinates are equal or less and update nearest x & y.
-        if(Math.abs(x2 - X_BASE) <= Math.abs(nearest_x - X_BASE) || Math.abs(y2 - Y_BASE) <= Math.abs(nearest_y - Y_BASE)) {
+        if(Math.abs(x2) <= Math.abs(nearest_x) && Math.abs(y2) <= Math.abs(nearest_y)) {
             nearest_x = x2;
-             nearest_y = y2;
+            nearest_y = y2;
         }
 
         System.out.println ("Enter third point coordinates:");
@@ -35,9 +34,9 @@ public class Origin {
         int y3 = scan.nextInt();
 
         // Condition if second input's coordinates are equal or less and update nearest x & y.
-        if(Math.abs(x3 - X_BASE) <= Math.abs(nearest_x - X_BASE) || Math.abs(y3 - Y_BASE) <= Math.abs(nearest_y - Y_BASE)) {
-            nearest_x = x2;
-            nearest_y = y2;
+        if(Math.abs(x3) <= Math.abs(nearest_x) && Math.abs(y3) <= Math.abs(nearest_y)) {
+            nearest_x = x3;
+            nearest_y = y3;
         }
 
         // Output the nearest x & y.
